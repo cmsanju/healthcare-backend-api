@@ -28,7 +28,7 @@ import java.io.IOException;
 
 @Component
 //@RequiredArgsConstructor
-@Slf4j
+//@Slf4j
 public class JwtAuthFilter extends OncePerRequestFilter {
 	
 	private static Logger log = LoggerFactory.getLogger(JwtAuthFilter.class);

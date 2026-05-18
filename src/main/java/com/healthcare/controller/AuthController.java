@@ -24,7 +24,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/auth")
 //@AllArgsConstructor
-@Slf4j
+//@Slf4j
 public class AuthController {
 	
 	private static Logger log = LoggerFactory.getLogger(AuthController.class);

@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
  * In production, replace with Pinecone, Weaviate, or ChromaDB
  */
 @Service
-@Slf4j
+//@Slf4j
 public class VectorStoreService {
 	
 	private static Logger log = LoggerFactory.getLogger(VectorStoreService.class);

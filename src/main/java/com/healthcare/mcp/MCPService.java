@@ -19,7 +19,7 @@ import java.util.*;
  */
 @Service
 //@RequiredArgsConstructor
-@Slf4j
+//@Slf4j
 public class MCPService {
 	
 	private static Logger log = LoggerFactory.getLogger(MCPService.class);

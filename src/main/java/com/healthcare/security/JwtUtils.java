@@ -19,7 +19,7 @@ import javax.crypto.SecretKey;
 import java.util.Date;
 
 @Component
-@Slf4j
+//@Slf4j
 public class JwtUtils {
 	
 	private static Logger log = LoggerFactory.getLogger(JwtUtils.class);

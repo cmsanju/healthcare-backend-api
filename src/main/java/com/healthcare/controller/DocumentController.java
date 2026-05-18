@@ -25,7 +25,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/documents")
 //@AllArgsConstructor
-@Slf4j
+//@Slf4j
 public class DocumentController {
 
 	private static Logger log = LoggerFactory.getLogger(DocumentController.class);

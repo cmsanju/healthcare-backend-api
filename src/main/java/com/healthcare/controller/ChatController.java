@@ -24,7 +24,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/chat")
 //@AllArgsConstructor
-@Slf4j
+//@Slf4j
 public class ChatController {
 	
 	@Autowired

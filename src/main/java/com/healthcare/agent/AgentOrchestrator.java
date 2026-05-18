@@ -22,7 +22,7 @@ import java.util.Map;
  */
 @Service
 //@RequiredArgsConstructor
-@Slf4j
+//@Slf4j
 public class AgentOrchestrator {
 	
 	private static Logger log = LoggerFactory.getLogger(AgentOrchestrator.class);

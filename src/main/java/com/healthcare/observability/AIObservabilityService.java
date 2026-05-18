@@ -17,7 +17,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
 @Service
-@Slf4j
+//@Slf4j
 public class AIObservabilityService {
 	
 	private static Logger log = LoggerFactory.getLogger(AIObservabilityService.class);

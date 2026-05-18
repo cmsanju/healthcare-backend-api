@@ -31,7 +31,7 @@ import java.util.UUID;
 
 @Service
 //@RequiredArgsConstructor
-@Slf4j
+//@Slf4j
 public class DocumentService {
 
 	private static Logger log = LoggerFactory.getLogger(DocumentService.class);

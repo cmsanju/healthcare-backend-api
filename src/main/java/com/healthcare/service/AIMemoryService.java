@@ -21,7 +21,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @Service
 //@RequiredArgsConstructor
-@Slf4j
+//@Slf4j
 public class AIMemoryService {
 	
 	private static Logger log = LoggerFactory.getLogger(AIMemoryService.class);

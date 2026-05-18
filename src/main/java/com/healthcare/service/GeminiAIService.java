@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 
 @Service
 //@RequiredArgsConstructor
-@Slf4j
+//@Slf4j
 public class GeminiAIService {
 	
 	private static Logger log = LoggerFactory.getLogger(GeminiAIService.class);

@@ -30,7 +30,7 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/reports")
 //@AllArgsConstructor
-@Slf4j
+//@Slf4j
 public class ReportController {
 
 	private static Logger log = LoggerFactory.getLogger(ReportController.class);

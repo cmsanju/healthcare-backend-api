@@ -38,7 +38,7 @@ import com.itextpdf.text.pdf.draw.LineSeparator;
 
 @Service
 //@RequiredArgsConstructor
-@Slf4j
+//@Slf4j
 public class ReportService {
 	
 	private static Logger log = LoggerFactory.getLogger(ReportService.class);
