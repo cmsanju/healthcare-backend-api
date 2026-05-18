@@ -1,6 +1,6 @@
 FROM maven:3.9.6-eclipse-temurin-21 AS build
 
-WORKDIR /app
+WORKDIR /healthcare-backend
 
 COPY . .
 
@@ -10,8 +10,8 @@ FROM eclipse-temurin:21
 
 WORKDIR /app
 
-COPY --from=build /app/target/*.jar app.jar
+COPY --from=build /app/target/*.jar healthcare-backend-1.0.0.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","app.jar"]
+ENTRYPOINT ["java","-jar","healthcare-backend-1.0.0.jar"]
