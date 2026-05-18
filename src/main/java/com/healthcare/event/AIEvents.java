@@ -42,6 +42,10 @@ public class AIEvents {
 			// TODO Auto-generated method stub
 			return agentType;
 		}
+
+		public String getQuery() {
+			return query;
+		}
     }
 
     @Getter
@@ -122,7 +126,7 @@ public class AIEvents {
 
 // Event Listener
 @Component
-@Slf4j
+//@Slf4j
 class AIEventListener {
 	private static Logger log = LoggerFactory.getLogger(AIEventListener.class);
     @Async
