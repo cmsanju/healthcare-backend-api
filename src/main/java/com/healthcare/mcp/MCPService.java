@@ -18,7 +18,7 @@ import java.util.*;
  * MCP allows AI to use structured tools with defined schemas
  */
 @Service
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @Slf4j
 public class MCPService {
 	

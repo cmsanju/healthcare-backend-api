@@ -10,7 +10,7 @@ FROM eclipse-temurin:21
 
 WORKDIR /app
 
-COPY --from=build /app/target/*.jar healthcare-backend-1.0.0.jar
+COPY --from=build /healthcare-backend/target/*.jar healthcare-backend-1.0.0.jar
 
 EXPOSE 8080
 

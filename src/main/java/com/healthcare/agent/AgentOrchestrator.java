@@ -20,7 +20,7 @@ import java.util.Map;
  * Implements LangGraph-style workflow with agent coordination
  */
 @Service
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @Slf4j
 public class AgentOrchestrator {
 	
