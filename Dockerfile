@@ -8,7 +8,7 @@ RUN mvn clean package -DskipTests
 
 FROM eclipse-temurin:21
 
-WORKDIR /app
+WORKDIR /healthcare-backend
 
 COPY --from=build /healthcare-backend/target/*.jar healthcare-backend-1.0.0.jar
 
