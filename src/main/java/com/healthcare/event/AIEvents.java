@@ -15,6 +15,10 @@ import java.time.LocalDateTime;
 
 // Event classes
 public class AIEvents {
+ private AIEvents() {
+   /* This utility class should not be instantiated */
+ }
+
 	
 	private static Logger log = LoggerFactory.getLogger(AIEvents.class);
 
