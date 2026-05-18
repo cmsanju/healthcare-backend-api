@@ -6,6 +6,8 @@ import com.healthcare.service.AIMemoryService;
 
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,14 +16,18 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
-@AllArgsConstructor
+//@AllArgsConstructor
 public class HealthController {
 
 	
-    private final AIObservabilityService observabilityService;
-    private final AIMemoryService memoryService;
-    private final MCPService mcpService;
+	@Autowired
+    private  AIObservabilityService observabilityService;
+	@Autowired
+    private  AIMemoryService memoryService;
+	@Autowired
+    private  MCPService mcpService;
     
+	/*
     public HealthController(AIObservabilityService observabilityService, AIMemoryService memoryService,
 			MCPService mcpService) {
 		
@@ -29,7 +35,7 @@ public class HealthController {
 		this.memoryService = memoryService;
 		this.mcpService = mcpService;
 	}
-
+*/
 	@GetMapping("/health")
     public ResponseEntity<?> health() {
         return ResponseEntity.ok(Map.of(

@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -23,17 +24,20 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/documents")
-@AllArgsConstructor
+//@AllArgsConstructor
 @Slf4j
 public class DocumentController {
 
 	private static Logger log = LoggerFactory.getLogger(DocumentController.class);
 
-	
-    private final DocumentService documentService;
-    private final UserRepository userRepository;
-    private final ApplicationEventPublisher eventPublisher;
+	@Autowired
+    private  DocumentService documentService;
+	@Autowired
+    private  UserRepository userRepository;
+	@Autowired
+    private  ApplicationEventPublisher eventPublisher;
     
+    /*
     public DocumentController(DocumentService documentService, UserRepository userRepository,
 			ApplicationEventPublisher eventPublisher) {
 		
@@ -41,7 +45,7 @@ public class DocumentController {
 		this.userRepository = userRepository;
 		this.eventPublisher = eventPublisher;
 	}
-
+ */
 	@PostMapping("/upload")
     public ResponseEntity<?> uploadDocument(
             @AuthenticationPrincipal UserDetails userDetails,

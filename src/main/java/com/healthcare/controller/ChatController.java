@@ -11,6 +11,7 @@ import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -22,16 +23,22 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/chat")
-@AllArgsConstructor
+//@AllArgsConstructor
 @Slf4j
 public class ChatController {
 	
-	private final AgentOrchestrator agentOrchestrator;
-    private final UserRepository userRepository;
-    private final ChatMessageRepository chatMessageRepository;
-    private final AIObservabilityService observabilityService;
-    private final ApplicationEventPublisher eventPublisher;
+	@Autowired
+	private  AgentOrchestrator agentOrchestrator;
+	@Autowired
+    private  UserRepository userRepository;
+	@Autowired
+    private  ChatMessageRepository chatMessageRepository;
+	@Autowired
+    private  AIObservabilityService observabilityService;
+	@Autowired
+    private  ApplicationEventPublisher eventPublisher;
     
+    /*
     public ChatController(AgentOrchestrator agentOrchestrator, UserRepository userRepository,
 			ChatMessageRepository chatMessageRepository, AIObservabilityService observabilityService,
 			ApplicationEventPublisher eventPublisher) {
@@ -42,7 +49,7 @@ public class ChatController {
 		this.observabilityService = observabilityService;
 		this.eventPublisher = eventPublisher;
 	}
-
+*/
 	@PostMapping("/message")
     public ResponseEntity<?> sendMessage(
             @AuthenticationPrincipal UserDetails userDetails,

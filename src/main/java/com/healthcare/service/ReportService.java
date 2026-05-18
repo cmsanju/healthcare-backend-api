@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.xwpf.usermodel.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.ByteArrayOutputStream;
@@ -36,21 +37,22 @@ import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.pdf.draw.LineSeparator;
 
 @Service
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @Slf4j
 public class ReportService {
 	
 	private static Logger log = LoggerFactory.getLogger(ReportService.class);
 
-    private final ReportRepository reportRepository;
+	@Autowired
+    private ReportRepository reportRepository;
     
     
-
+/*
     public ReportService(ReportRepository reportRepository) {
 		
 		this.reportRepository = reportRepository;
 	}
-
+*/
 	public Report generateReport(
             com.healthcare.model.Document document,
             User user

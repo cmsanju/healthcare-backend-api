@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -22,18 +23,25 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")
-@AllArgsConstructor
+//@AllArgsConstructor
 @Slf4j
 public class AuthController {
 	
 	private static Logger log = LoggerFactory.getLogger(AuthController.class);
 
-    private final UserRepository userRepository;
-    private final JwtUtils jwtUtils;
-    private final AuthenticationManager authenticationManager;
-    private final PasswordEncoder passwordEncoder;
+	@Autowired
+    private  UserRepository userRepository;
+	
+	@Autowired
+    private  JwtUtils jwtUtils;
+	
+	@Autowired
+    private  AuthenticationManager authenticationManager;
+	
+	@Autowired
+    private  PasswordEncoder passwordEncoder;
     
-    
+    /*
 
     public AuthController(UserRepository userRepository, JwtUtils jwtUtils, AuthenticationManager authenticationManager,
 			PasswordEncoder passwordEncoder) {
@@ -42,7 +50,7 @@ public class AuthController {
 		this.authenticationManager = authenticationManager;
 		this.passwordEncoder = passwordEncoder;
 	}
-
+*/
 	@PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody Map<String, String> request) {
         String username = request.get("username");

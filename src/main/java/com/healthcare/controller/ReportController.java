@@ -15,6 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -28,19 +29,24 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/reports")
-@AllArgsConstructor
+//@AllArgsConstructor
 @Slf4j
 public class ReportController {
 
 	private static Logger log = LoggerFactory.getLogger(ReportController.class);
 	
-    private final ReportService reportService;
-    private final DocumentService documentService;
-    private final UserRepository userRepository;
-    private final ApplicationEventPublisher eventPublisher;
+	@Autowired
+    private  ReportService reportService;
+	@Autowired
+    private  DocumentService documentService;
+	@Autowired
+    private  UserRepository userRepository;
+	
+	@Autowired
+    private  ApplicationEventPublisher eventPublisher;
     
     
-
+/*
     public ReportController(ReportService reportService, DocumentService documentService, UserRepository userRepository,
 			ApplicationEventPublisher eventPublisher) {
 		
@@ -49,7 +55,7 @@ public class ReportController {
 		this.userRepository = userRepository;
 		this.eventPublisher = eventPublisher;
 	}
-
+*/
 	@PostMapping("/generate/{documentId}")
     public ResponseEntity<?> generateReport(
             @AuthenticationPrincipal UserDetails userDetails,

@@ -5,6 +5,8 @@ import com.healthcare.repository.UserRepository;
 
 import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,17 +16,18 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/user")
-@AllArgsConstructor
+//@AllArgsConstructor
 public class UserController {
 
-    private final UserRepository userRepository;
+	@Autowired
+    private UserRepository userRepository;
     
-
+/*
     public UserController(UserRepository userRepository) {
 	
 		this.userRepository = userRepository;
 	}
-
+*/
 	@GetMapping("/profile")
     public ResponseEntity<?> getProfile(@AuthenticationPrincipal UserDetails userDetails) {
         User user = userRepository.findByUsername(userDetails.getUsername())
